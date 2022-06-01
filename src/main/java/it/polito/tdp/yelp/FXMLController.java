@@ -76,7 +76,11 @@ public class FXMLController {
 	void doUtenteSimile(ActionEvent event) {
 		User u = cmbUtente.getValue();
 		List<User> vicini = model.utentiPiuSimili(u);
-		txtResult.setText(vicini.toString());
+		txtResult.setText("Utenti più vicini a " + u + "\n");
+		for (User u2 : vicini) {
+			txtResult.appendText(u2.toString() + "\n");
+		}
+//		txtResult.setText(vicini.toString();
 	}
 
 	@FXML
